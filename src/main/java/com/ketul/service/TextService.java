@@ -25,8 +25,6 @@ public class TextService {
         ITesseract iTesseract = new Tesseract();
         iTesseract.setDatapath("tessdata");
 
-
-
         try (OutputStream os = new FileOutputStream(file)) {
             os.write(multipartFile.getBytes());
 
@@ -37,7 +35,7 @@ public class TextService {
             }
 
         } catch (IOException e) {
-            return ResponseEntity.ok("some error occur to write file into ");
+            return ResponseEntity.ok("some error occur to write MultipartFile to File or convert Image to png");
         }
 
         String result;
